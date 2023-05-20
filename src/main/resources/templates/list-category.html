@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{layout/adminlayout.html :: layout(~{::main})}" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<main role="main">
+    <div class="bg-primary text-white py-2">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1><i class="fas fa-cogs mr-2"></i>Category</h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <section>
+        <div class="bg-light py-5 mb-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-6">
+                        <div class="input-group">
+                            <input class="form-control" type="text">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="card shadow">
+                <div class="card-header">
+                    <h4>Category</h4>
+                </div>
+                <div class="card-body">
+                    <div th:replace="fragments/categoryTable.html :: catTable"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<!--Slider-->
+
+<div id="overlay" th:fragment="slider">
+    <section id="showcase">
+        <div class="carousel slide" data-ride="carousel" id="myCarousel">
+
+            <ol class="carousel-indicators">
+                <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+                <li data-slide-to="1" data-target="#myCarousel"></li>
+                <li data-slide-to="2" data-target="#myCarousel"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="carousel-item carousel-image-1 active">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-md-block text-center mb-3">
+                            <h1 class="display-3">Chase Your Dream</h1>
+                            <p class="Lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dicta
+                                dolore quas sunt!</p>
+                            <button class="btn btn-lg btn-info">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item carousel-image-2">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-md-block text-center mb-3">
+                            <h1 class="display-3"></h1>
+                            <p class="Lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dicta
+                                dolore quas sunt!</p>
+                            <button class="btn btn-lg btn-info">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item carousel-image-3">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-md-block text-center mb-3">
+                            <h1 class="display-3"></h1>
+                            <p class="Lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dicta
+                                dolore quas sunt!</p>
+                            <button class="btn btn-lg btn-info">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="mt-3 home-icon" th:fragment="homeIcon">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 text-center">
+                    <i class="fas fa-book"></i>
+                    <h3>Explore</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="col-md-4 mb-3 text-center">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Find</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="col-md-4 mb-3 text-center">
+                    <i class="fas fa-store"></i>
+                    <h3>Buy It</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container-fluid justify-content-center">
+        <h3 class="text-center">Best Seller</h3>
+        <div class="row">
+            <div class="col-md-3" th:each="book : ${allbooks}">
+                <div class="card" style="width: 18rem">
+                    <img class="card-img" th:src="${book.imgUrl}">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${book.title}"></h5>
+                        <p class="card-text" th:text="${book.description}"></p>
+                        <div class="d-flex justify-content-between">
+                            <a class="btn btn-link" href="#"></a>
+                            <span class="card-text" th:text="${book.price + '$'}"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="py-5" id="home-heading">
+        <div class="dark-overlay">
+            <div class="row">
+                <div class="col">
+                    <div class="container text-center">
+                        <h3>Are You Ready to Get Started?</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at distinctio ducimus ea
+                            earum eligendi, eos maiores minus molestias natus neque nostrum quae quis quo repellat totam
+                            vitae? Architecto, dolorem!</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>BENEFITS OF READING</h1>
+                    <p class="lead"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi cumque ducimus iste molestiae nesciunt, odio officia quaerat quas ratione sapiente vel veniam vero! Dolorum est id officia omnis placeat porro.</span>
+                    </p>
+                    <a class="btn btn-outline-info" href="#" th:href="@{/show-all-books}">LEARN MORE</a>
+                </div>
+                <div class="col">
+                    <img alt="" class="img-fluid" src="../../static/img/laptop.png" th:src="@{/img/laptop.png}">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container py-4 text-center">
+            <h1>WHAT OTHERS SAYING</h1>
+            <h3 class="text-info">#BOOKSHELF</h3>
+            <div class="row">
+                <div class="col-md-3" th:each="book : ${allbooks}">
+                    <div th:if="book.imgUrl != null">
+                        <img alt="" class="img-thumbnail" th:src="${book.imgUrl}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container" id="quote">
+            <blockquote class="blockquote text-center">
+                <h3><i class="fas fa-quote-left"></i></h3>
+                <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut consectetur deserunt excepturi exercitationem explicabo fugiat id labore libero minima nemo, nihil obcaecati officiis omnis, pariatur praesentium quidem saepe tempore?</span>
+                </p>
+                <footer class="blockquote-footer">Thomas Hardy</footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <section id="newsettlers">
+        <div class="container text-white text-center py-5">
+            <p class="lead">EXPLORE AND ENJOY OUR BOOKSHELF AND MAKE HAPPY</p>
+            <div class="justify-content-center">
+                <div class="row">
+                    <div class="col">
+                        <form action="#">
+                            <div class="input-group">
+                                <input class="form-control" placeholder="Enter Email" type="text">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-info">JOIN NOW</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="p-3" id="footer">
+        <ul class="nav d-flex justify-content-center flex-column flex-sm-row">
+            <li class="nav-item">
+                <a class="nav-link text-white" href="">FAQ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="">SEARCH</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="">ABOUT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="">CONTACT US</a>
+            </li>
+        </ul>
+
+    </section>
+</div>
+</body>
+</html>

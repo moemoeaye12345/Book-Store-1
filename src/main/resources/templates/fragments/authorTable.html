@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<table class="table table-striped" th:fragment="authorTable">
+    <thead class="bg-success">
+    <tr>
+        <th>Id</th>
+        <th>Author Name</th>
+        <th>Date of Birth</th>
+        <th>ZipCode</th>
+        <th>StreetName</th>
+        <th>PhoneNumber</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="author : ${authors}">
+        <td th:text="${author.id}"></td>
+        <td th:text="${author.authorName}"></td>
+        <td th:text="${author.dateOfBirth}"></td>
+        <td th:text="${author.address.zipCode}"></td>
+        <td th:text="${author.address.streetName}"></td>
+        <td th:text="${author.address.phoneNumber}"></td>
+        <td th:text="${author.address.email}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
